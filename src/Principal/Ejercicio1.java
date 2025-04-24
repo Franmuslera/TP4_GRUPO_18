@@ -27,7 +27,7 @@ public class Ejercicio1 extends JFrame{
 		lblApellido.setBounds(42, 80, 53, 14);
 		getContentPane().add(lblApellido);
 		
-		JLabel lblTelefono = new JLabel("TelÈfono");
+		JLabel lblTelefono = new JLabel("TelÔøΩfono");
 		lblTelefono.setBounds(42, 110, 53, 14);
 		getContentPane().add(lblTelefono);
 		
@@ -36,7 +36,7 @@ public class Ejercicio1 extends JFrame{
 		getContentPane().add(lblFechanac);
 		
 		JLabel lblDatosIngre = new JLabel("Los datos ingresados fueron: ");
-		lblDatosIngre.setBounds(32, 250, 180, 14);
+		lblDatosIngre.setBounds(32, 250, 400, 100);
 		getContentPane().add(lblDatosIngre);
 		
 		
@@ -77,6 +77,26 @@ public class Ejercicio1 extends JFrame{
 		JButton btnMostrar = new JButton("Mostrar");
         btnMostrar.setBounds(220, 170, 89, 30);
         getContentPane().add(btnMostrar);
-	}
+	
+	
+	
+	 btnMostrar.addActionListener(e -> {
+        
+     
+             String datos = "Nombre: " + frmtdtxtfldNombre.getText() 
+                     + " | Apellido: " + frmtdtxtfldApellido.getText()
+                     + " | Tel√©fono: " + frmtdtxtfldTelefono.getText()
+                     + " | Fecha Nac.: " + frmtdtxtfldFechaN.getText();
 
+             lblDatosIngre.setText("Los datos ingresados fueron: " + datos);
+
+             // Limpiar campos
+             frmtdtxtfldNombre.setText("");
+             frmtdtxtfldApellido.setText("");
+             frmtdtxtfldTelefono.setText("");
+             frmtdtxtfldFechaN.setText("");
+         
+        
+     });
+	}
 }
