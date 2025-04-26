@@ -33,6 +33,7 @@ public class VentanaPrincipal extends JFrame{
 		boton1.addActionListener(new EventoBoton1());
 		
 		JButton boton2 = new JButton("Ejercicio 2");
+		boton2.addActionListener(new EventoBoton2());
 		boton2.setBounds(150, 200, 150, 50);
 		getContentPane().add(boton2);
 		
@@ -58,5 +59,12 @@ public class VentanaPrincipal extends JFrame{
 		}
 		
 	}
+	  class EventoBoton2 implements ActionListener {
+	        @Override
+	        public void actionPerformed(ActionEvent arg0) {
+	            Ejercicio2 ejercicio2 = new Ejercicio2();
+	            ejercicio2.setVisible(true);
+	        }
+	    }
 
 }
