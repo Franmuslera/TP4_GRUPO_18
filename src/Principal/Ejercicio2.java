@@ -7,7 +7,7 @@ public class Ejercicio2 extends JFrame {
 
     public Ejercicio2() {
 
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //Esto hara que se cierre solo la ventana.
 
         setSize(500, 500);
         setLocation(350, 350);
@@ -57,7 +57,7 @@ public class Ejercicio2 extends JFrame {
 
         // Btn Calcular
         JButton btnCalcular = new JButton("Calcular");
-        btnCalcular.setBounds(170, 220, 100, 30);
+        btnCalcular.setBounds(100, 220, 100, 30);
         getContentPane().add(btnCalcular);
 
         // event btn Calcular
@@ -88,5 +88,34 @@ public class Ejercicio2 extends JFrame {
                 JOptionPane.showMessageDialog(this, "Debe ingresar números válidos en todas las notas.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
+   
+        // Btn Nuevo.
+        JButton btnNuevo = new JButton("Nuevo");
+        btnNuevo.setBounds(210,220,100,30);
+        getContentPane().add(btnNuevo);
+        
+        //Evento para boton nuevo.
+        btnNuevo.addActionListener(e ->{
+        	txtNota1.setText("");
+        	txtNota2.setText("");
+        	txtNota3.setText("");
+        	comboTP.setSelectedIndex(0);
+        	lblResultado.setText("Notas del estudiante:");
+        });
+        
+        // Boton Salir
+        JButton btnSalir=new JButton("Salir");
+        btnSalir.setBounds(320,220,100,30);
+        getContentPane().add(btnSalir);
+        
+        //Evento boton salir.
+        btnSalir.addActionListener(e ->{
+        	dispose();
+        });
+        	
+        	
+        }
+            
     }
-}
+    
+
