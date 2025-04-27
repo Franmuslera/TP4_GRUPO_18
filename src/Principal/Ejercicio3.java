@@ -26,6 +26,8 @@ import javax.swing.BoxLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Ejercicio3 extends JFrame {
 
@@ -131,5 +133,38 @@ public class Ejercicio3 extends JFrame {
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Programacion");
 		chckbxNewCheckBox.setBounds(243, 6, 144, 21);
 		panel_1.add(chckbxNewCheckBox);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        String sistema = "";
+		        if (rdbtnNewRadioButton.isSelected()) {
+		            sistema = "Windows";
+		        } else if (rdbtnNewRadioButton_1.isSelected()) {
+		            sistema = "Mac";
+		        } else if (rdbtnNewRadioButton_2.isSelected()) {
+		            sistema = "Linux";
+		        }
+
+		        String especialidades = "";
+		        if (chckbxNewCheckBox.isSelected()) {
+		            especialidades += " - Programación";
+		        }
+		        if (chckbxNewCheckBox_1.isSelected()) {
+		            especialidades += " - Administración";
+		        }
+		        if (chckbxNewCheckBox_2.isSelected()) {
+		            especialidades += " - Diseño Gráfico";
+		        }
+
+		        String horas = textField.getText();
+
+		        String mensaje = sistema + especialidades + " - " + horas + " Hs";
+
+		        VentanaResultado3 ventana = new VentanaResultado3(mensaje);
+		        ventana.setVisible(true);
+		    }
+		});
+
+		
 	}
 }
